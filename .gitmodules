@@ -1,0 +1,12 @@
+[submodule "unitree_ros"]
+	path = unitree_ros
+	url = https://github.com/unitreerobotics/unitree_ros
+[submodule "unitree_ros_to_real"]
+	path = unitree_ros_to_real
+	url = https://github.com/unitreerobotics/unitree_ros_to_real
+[submodule "z1_controller"]
+	path = z1_controller
+	url = https://github.com/unitreerobotics/z1_controller
+[submodule "z1_sdk"]
+	path = z1_sdk
+	url = https://github.com/unitreerobotics/z1_sdk

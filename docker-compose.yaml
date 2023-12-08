@@ -1,0 +1,22 @@
+version: '3.0'
+services:
+  z1_sim:
+    container_name: z1_sim_container
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes: 
+      - '/tmp/.X11-unix:/tmp/.X11-unix:rw'
+      - './unitree_ros:/z1_package/unitree_ws/src/unitree_ros'
+      - './unitree_ros_to_real/unitree_legged_msgs:/z1_package/unitree_ws/src/unitree_legged_msgs'
+      - './z1_sdk:/z1_package/z1_sdk'
+      - './z1_controller:/z1_package/z1_controller'
+    privileged: true
+    network_mode: host
+    entrypoint: /entrypoint.sh
+    tty: true
+
